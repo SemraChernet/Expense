@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Expense.BudgetEntry"
+             Title="Budget for the Month">
+
+    <StackLayout>
+        <Frame BackgroundColor="CadetBlue" Padding="24" CornerRadius="0">
+            <Label Text="My Budget" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+
+        <Editor x:Name="BudgetEditor"
+                Keyboard="Numeric"
+                Placeholder="What is your buget for this month?"
+                HeightRequest="100" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Button Text="Save"
+                    Clicked="OnSaveButtonClicked" />
+            <Button Text="Delete" Grid.Column="1"
+                    Clicked="OnDeleteButtonClicked" />
+        </Grid>
+        
+        
+    </StackLayout>
+
+</ContentPage>
